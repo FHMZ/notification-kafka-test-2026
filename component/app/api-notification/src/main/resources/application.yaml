@@ -1,0 +1,30 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+    consumer:
+      group-id: notification-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+app:
+  auth:
+    user: admin@company.com
+    password: admin123
+  jwt:
+    secret: "change-me-super-secret-32-chars-minimum"
+    issuer: "notification-service"
+    expiration-minutes: 60
+  kafka:
+    topic:
+      email: notifications.email
+      email-dlq: notifications.email.dlq
+  consumer:
+    retry:
+      max-attempts: 3
+      backoff-ms: 1000
