@@ -65,6 +65,12 @@ Responsible for consuming and processing notifications.
 
 ---
 
+## Download the github repository
+
+```bash
+git clone https://github.com/FHMZ/notification-kafka-test-2026.git
+```
+
 ## 🔁 Message Flow
 
 ```
