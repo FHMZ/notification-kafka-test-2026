@@ -196,14 +196,21 @@ In Kafka UI:
 ## 📡 API Usage
 
 ### Authentication
-```http
-POST /auth/login
+
+```text
+postman request POST 'http://localhost:8080/auth/login' \
+  --header 'Content-Type: application/json' \
+  --body '{"username":"admin@company.com","password":"admin123"}'
 ```
 
+
+
 ### Send Email Notification
-```http
-POST /api/notifications/email
-Authorization: Bearer <JWT>
+```text
+postman request POST 'http://localhost:8080/api/notifications/email' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer {TOKEN}' \
+  --body '{"to":"test@mail.com","subject":"Test email","body":"hello 3"}'
 ```
 
 Returns:
