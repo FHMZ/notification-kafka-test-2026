@@ -1,0 +1,6 @@
+rootProject.name = 'notification-service'
+
+include 'component:app:api-notification'
+include 'component:module:publisher'
+include 'component:module:consumer'
+include 'component:module:auth'

@@ -1,0 +1,42 @@
+plugins {
+    id "org.springframework.boot" version "3.5.10" apply false
+    id "io.spring.dependency-management" version "1.1.7" apply false
+}
+
+allprojects {
+    group = 'com.notification'
+    version = "0.1.0"
+    description = 'Asynchronous Notification Service using Kafka with Retry and Dead Letter Queue'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "io.spring.dependency-management"
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:3.5.10"
+        }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = "UTF-8"
+    }
+
+    tasks.test {
+        useJUnitPlatform()
+        // Keep true once you have real tests.
+        // For now, this avoids failing builds when a module has test folder but no tests yet.
+        // failOnNoDiscoveredTests = false
+    }
+}
