@@ -65,12 +65,6 @@ Responsible for consuming and processing notifications.
 
 ---
 
-## Download the github repository
-
-```bash
-git clone https://github.com/FHMZ/notification-kafka-test-2026.git
-```
-
 ## 🔁 Message Flow
 
 ```
@@ -121,6 +115,14 @@ Kafka infrastructure is intentionally abstracted and not mocked at the business 
 - Docker
 - Docker Compose
 - Java 17+
+
+---
+
+## Clone the Repository (Use Main Branch)
+
+```bash
+git clone https://github.com/FHMZ/notification-kafka-test-2026.git
+```
 
 ---
 
